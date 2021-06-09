@@ -1,0 +1,16 @@
+id
+nom
+Kitchen
+Restroom
++
+elt associe1
+elt associe 2
+=
+id
+nom
+Bathroom
++
+blabla
+blablaa
+bla
+=

@@ -5,4 +5,14 @@ public class Category {
     {
         this.name = name;
     }
+
+    public boolean hasName(String name1)
+    {
+        return name1.equals(name);
+    }
+
+    public void display()
+    {
+        System.out.println(name);
+    }
 }
