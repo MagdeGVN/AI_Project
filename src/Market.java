@@ -31,7 +31,7 @@ public class Market {
 
                 while(!data.equals("+"))
                 {
-                    for (Category cat: cats)
+                    for (Category cat: categories)
                     {
                         if(cat.hasName(data))
                         {
