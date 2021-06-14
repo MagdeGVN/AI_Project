@@ -5,11 +5,13 @@ import java.util.Scanner;
 public class Market {
     private ArrayList <Category> categories;
     private ArrayList <Product>  products;
+    private ArrayList <Customer> customers;
 
     public Market()
     {
         categories = new ArrayList<Category>(0);
         products = new ArrayList<Product>(0);
+        customers = new ArrayList<Customer>(0);
     }
 
     public void readAllProducts()
@@ -53,8 +55,10 @@ public class Market {
                 Product product = new Product (id1, name1, elts,cats);
 
                 products.add(product);
+                
             }
             input.close();
+            associateProducts();
         }
         catch(FileNotFoundException e )
         {
@@ -86,11 +90,64 @@ public class Market {
 
     }
 
+    public void readCustomers()
+    {
+        try
+        {
+            File file = new File ("Customers.txt");
+            Scanner input = new Scanner(file);
+
+            while(input.hasNextLine() )
+            {
+                String id = input.nextLine();
+                String name = input.nextLine();
+                Customer customer = new Customer (id, name);
+                String data = input.nextLine();
+                while(!data.equals("=")){
+                    for(Product product: products){
+                        if (product.getId().equals(data)){
+                            customer.addToCart(product);
+                            break;
+                        }
+                    }
+                    data = input.nextLine();
+                }
+                customers.add(customer);
+            }
+            input.close();
+        }
+        catch(FileNotFoundException e )
+        {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
     public void displayProducts()
     {
         for (Product prod : products)
         {
             prod.display();
+        }
+    }
+
+    public void displayCustomers()
+    {
+        for (Customer customer : customers)
+        {
+            customer.display();
+        }
+    }
+
+    public void associateProducts(){
+        for(Product product: products){
+            for(String name: product.getAssosciatedNames()){
+                for(Product associated: products){
+                    if(name.equals(associated.getName())){
+                        product.addAssociated(associated);
+                    }
+                }
+            }
         }
     }
 }

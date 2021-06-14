@@ -37,12 +37,28 @@ public class Product {
             cat.display();
         }
         i = 0;
-        for (String name : associatedNames)
+        for (Product product : associatedProducts)
         {
             i++;
-            System.out.println("Associated product "+ i + " : " + name);
+            System.out.println("Associated product "+ i + " : " + product.getName());
         }
         
 
+    }
+
+    public ArrayList <String> getAssosciatedNames(){
+        return associatedNames;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getId(){
+        return id;
+    }
+
+    public void addAssociated(Product prod){
+        associatedProducts.add(prod);
     }
 }

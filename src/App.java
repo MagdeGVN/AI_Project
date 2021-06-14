@@ -4,6 +4,8 @@ public class App {
         Market market = new Market();
         market.readCategories();
         market.readAllProducts();
+        market.readCustomers();
         market.displayProducts();
+        market.displayCustomers();
     }
 }
