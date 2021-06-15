@@ -1,7 +1,6 @@
 000001
 casserole
 Kitchen
-Restroom
 +
 spoon
 pan
@@ -21,6 +20,58 @@ webcam
 =
 000004
 mouse
+Electronic devices
++
+computer
+=
+000005
+spoon 
+Kitchen
++
+pan
+casserole
+=
+000006
+towel 
+Bathroom
+Restroom 
++
+soap
+=
+000007
+soap
+Bathroom
+Kitchen
+Restroom
++
+towel 
+perfume
+=
+000008
+perfume
+Bathroom
+Cosmetic
+Make up
++
+soap
+mascara
+=
+000009
+mascara
+Make up
++
+moisturizer
+perfume
+=
+000010
+moisturizer
+Cosmetic
+Make up
++
+mascara
+=
+000011
+webcam
 Electronic devices
 +
 computer

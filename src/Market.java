@@ -136,6 +136,7 @@ public class Market {
         for (Customer customer : customers)
         {
             customer.display();
+            System.out.println();
         }
     }
 
@@ -148,6 +149,42 @@ public class Market {
                     }
                 }
             }
+        }
+    }
+
+
+    public void displayProductList()
+    {
+        for (Product prod : products)
+        {
+            System.out.println("- " + prod.getName());
+        }
+    }
+
+    public ArrayList<String> recommand (String productName)
+    {
+
+        ArrayList<String> recommandations = new ArrayList<String>(0);
+
+        for(Product product : products)
+        {
+            if (productName.equals(product.getName()))
+            {
+                recommandations = product.getAssosciatedNames();
+            }
+        }
+        return recommandations;
+    }
+
+    public void displayRecommandations(String productName)
+    {
+        System.out.println("Other product that coult intererst you :");
+        
+        ArrayList<String> recommandations = recommand(productName);
+        
+        for (String reco : recommandations)
+        {
+            System.out.println("- " + reco);
         }
     }
 }

@@ -42,6 +42,7 @@ public class Product {
             i++;
             System.out.println("Associated product "+ i + " : " + product.getName());
         }
+        System.out.println();
         
 
     }
@@ -61,4 +62,6 @@ public class Product {
     public void addAssociated(Product prod){
         associatedProducts.add(prod);
     }
+
+    
 }

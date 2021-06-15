@@ -6,4 +6,5 @@ Bathroom
 Bedroom
 Restroom
 Electronic devices
+Books
 
