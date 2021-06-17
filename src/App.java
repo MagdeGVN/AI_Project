@@ -15,12 +15,17 @@ public class App {
 
         System.out.println("Hello! What do you want to purchase?");
         market.displayProductList();
+        System.out.println();
         String productName = keyboard.nextLine();
 
+        System.out.println("Please choose the one you want among the list of computer below:");
+        market.displayProductId(productName);
+        String selectedId = keyboard.nextLine();
+        
         System.out.print("\033\143");
 
         System.out.println("Your product is added to your cart...\n");
-        market.displayRecommandations(productName);
+        market.displayRecommandations(selectedId);
 
 
 

@@ -161,14 +161,28 @@ public class Market {
         }
     }
 
-    public ArrayList<String> recommand (String productName)
+    public void displayProductId(String productName)
+    {
+        for (Product prod : products)
+        {
+            if (productName.equals(prod.getName()))
+            {
+                System.out.println("- "+ prod.getId());
+            }
+        }
+    
+    }
+
+
+
+    public ArrayList<String> recommand (String selectedId)
     {
 
         ArrayList<String> recommandations = new ArrayList<String>(0);
 
         for(Product product : products)
         {
-            if (productName.equals(product.getName()))
+            if (selectedId.equals(product.getId()))
             {
                 recommandations = product.getAssosciatedNames();
             }
@@ -176,11 +190,11 @@ public class Market {
         return recommandations;
     }
 
-    public void displayRecommandations(String productName)
+    public void displayRecommandations(String selectedId)
     {
         System.out.println("Other product that coult intererst you :");
         
-        ArrayList<String> recommandations = recommand(productName);
+        ArrayList<String> recommandations = recommand(selectedId);
         
         for (String reco : recommandations)
         {
